@@ -1971,6 +1971,151 @@ section{padding:80px 0}
     display: none !important;
   }
 }
+  /* ===== HERO LAYOUT FIX FINAL - hard position left cards ===== */
+
+/* Khung tổng visual */
+.hero-visual-wrap.hero-visual-updated {
+  position: relative !important;
+  display: block !important;
+  width: 1294px !important;
+  max-width: 1294px !important;
+  height: 580px !important;
+  margin: 34px auto 0 !important;
+  padding: 0 !important;
+  overflow: visible !important;
+}
+
+/* Reset toàn bộ positioning cũ */
+.hero-visual-updated .hero-dashboard,
+.hero-visual-updated .hero-popup-ai,
+.hero-visual-updated .hero-popup-kpi,
+.hero-visual-updated .hero-popup-workflow {
+  position: absolute !important;
+  transform: none !important;
+  margin: 0 !important;
+  inset: auto !important;
+  object-fit: contain !important;
+}
+
+/* Ẩn 3 icon module cũ */
+.hero-visual-updated .hb-1work,
+.hero-visual-updated .hb-1hrm,
+.hero-visual-updated .hb-1crm {
+  display: none !important;
+}
+
+/* 1Assistant: cùng hàng, cùng size với KPI */
+.hero-visual-updated .hero-popup-ai {
+  width: 220px !important;
+  max-width: 220px !important;
+  height: auto !important;
+  left: 0 !important;
+  top: 0 !important;
+  z-index: 5 !important;
+}
+
+/* KPI: cùng hàng, cùng size với AI, cách AI 16px */
+.hero-visual-updated .hero-popup-kpi {
+  width: 220px !important;
+  max-width: 220px !important;
+  height: auto !important;
+  left: 236px !important; /* 220 + 16 gap */
+  top: 0 !important;
+  z-index: 5 !important;
+}
+
+/* Workflow: lề trái/phải thẳng với tổng 2 card trên */
+.hero-visual-updated .hero-popup-workflow {
+  width: 456px !important; /* 220 + 16 + 220 */
+  max-width: 456px !important;
+  height: auto !important;
+  left: 0 !important;
+  top: 312px !important;
+  z-index: 4 !important;
+}
+
+/* Dashboard chính bên phải */
+.hero-visual-updated .hero-dashboard {
+  width: 790px !important;
+  max-width: 790px !important;
+  height: 560px !important;
+  left: 504px !important; /* 456 + 48 gap */
+  top: 0 !important;
+  object-fit: cover !important;
+  object-position: top center !important;
+  border-radius: 22px !important;
+  z-index: 3 !important;
+}
+
+/* Giảm khoảng dưới hero */
+#hero {
+  overflow: visible !important;
+  padding-bottom: 58px !important;
+}
+
+/* Tablet */
+@media (max-width: 1023px) {
+  .hero-visual-wrap.hero-visual-updated {
+    position: relative !important;
+    width: 760px !important;
+    max-width: 760px !important;
+    height: 880px !important;
+  }
+
+  .hero-visual-updated .hero-dashboard {
+    width: 720px !important;
+    max-width: 720px !important;
+    height: auto !important;
+    left: 20px !important;
+    top: 0 !important;
+    object-fit: contain !important;
+  }
+
+  .hero-visual-updated .hero-popup-ai {
+    width: 220px !important;
+    left: 142px !important;
+    top: 500px !important;
+  }
+
+  .hero-visual-updated .hero-popup-kpi {
+    width: 220px !important;
+    left: 398px !important;
+    top: 500px !important;
+  }
+
+  .hero-visual-updated .hero-popup-workflow {
+    width: 456px !important;
+    left: 142px !important;
+    top: 812px !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .hero-visual-wrap.hero-visual-updated {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    margin-top: 28px !important;
+    padding: 0 !important;
+  }
+
+  .hero-visual-updated .hero-dashboard {
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+  }
+
+  .hero-visual-updated .hero-popup-ai,
+  .hero-visual-updated .hero-popup-kpi,
+  .hero-visual-updated .hero-popup-workflow,
+  .hero-visual-updated .hero-badge {
+    display: none !important;
+  }
+}
 </style>
 </head>
 <body>
