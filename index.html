@@ -2035,6 +2035,164 @@ section{padding:80px 0}
   right: 1.5% !important;
   bottom: 85px !important;
 }
+  /* ===== HERO LAYOUT FIX V4 - 2 COLUMN PRODUCT COMPOSITION ===== */
+
+/* Tổng thể hero visual: chuyển từ popup bay tự do sang bố cục 2 cột */
+#hero {
+  overflow: visible !important;
+  padding-bottom: 96px !important;
+}
+
+.hero-visual-wrap.hero-visual-updated {
+  display: grid !important;
+  grid-template-columns: repeat(4, 105px) minmax(620px, 1fr) !important;
+  grid-template-rows: 250px 220px 92px !important;
+  grid-template-areas:
+    "ai ai kpi kpi dash"
+    "flow flow flow flow dash"
+    "work hrm crm . dash" !important;
+  column-gap: 14px !important;
+  row-gap: 18px !important;
+  align-items: stretch !important;
+  justify-content: center !important;
+  max-width: 1180px !important;
+  height: auto !important;
+  margin: 52px auto 0 !important;
+  padding: 24px 0 40px !important;
+  overflow: visible !important;
+}
+
+/* Reset toàn bộ layout popup cũ */
+.hero-visual-updated .hero-dashboard,
+.hero-visual-updated .hero-popup,
+.hero-visual-updated .hero-badge {
+  position: static !important;
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+  transform: none !important;
+}
+
+/* Dashboard chính: đặt bên phải, là visual lớn nhất */
+.hero-visual-updated .hero-dashboard {
+  grid-area: dash !important;
+  width: 100% !important;
+  max-width: 720px !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  align-self: center !important;
+  justify-self: center !important;
+  z-index: 3 !important;
+}
+
+/* Card 1Assistant: ô trái trên */
+.hero-visual-updated .hero-popup-ai {
+  grid-area: ai !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  align-self: center !important;
+  justify-self: center !important;
+  z-index: 5 !important;
+}
+
+/* Card KPI: ô phải trên trong cụm phụ */
+.hero-visual-updated .hero-popup-kpi {
+  grid-area: kpi !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  align-self: center !important;
+  justify-self: center !important;
+  z-index: 5 !important;
+}
+
+/* Card Workflow: kéo ngang bên dưới 2 card nhỏ */
+.hero-visual-updated .hero-popup-workflow {
+  grid-area: flow !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  align-self: center !important;
+  justify-self: center !important;
+  z-index: 4 !important;
+}
+
+/* Module chips: đưa xuống dưới cụm phụ bên trái */
+.hero-visual-updated .hero-badge {
+  width: 86px !important;
+  height: 86px !important;
+  align-self: center !important;
+  justify-self: center !important;
+  z-index: 4 !important;
+}
+
+.hero-visual-updated .hb-1work {
+  grid-area: work !important;
+}
+
+.hero-visual-updated .hb-1hrm {
+  grid-area: hrm !important;
+}
+
+.hero-visual-updated .hb-1crm {
+  grid-area: crm !important;
+}
+
+/* Tablet: chuyển về layout gọn hơn */
+@media (max-width: 1023px) {
+  .hero-visual-wrap.hero-visual-updated {
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: auto auto auto auto !important;
+    grid-template-areas:
+      "dash dash"
+      "ai kpi"
+      "flow flow"
+      "work hrm" !important;
+    max-width: 820px !important;
+    row-gap: 16px !important;
+    column-gap: 14px !important;
+  }
+
+  .hero-visual-updated .hero-dashboard {
+    width: 100% !important;
+    max-width: 720px !important;
+  }
+
+  .hero-visual-updated .hero-popup-ai,
+  .hero-visual-updated .hero-popup-kpi {
+    max-height: 240px !important;
+  }
+
+  .hero-visual-updated .hero-popup-workflow {
+    max-height: 260px !important;
+  }
+
+  .hero-visual-updated .hb-1crm {
+    display: none !important;
+  }
+}
+
+/* Mobile: ưu tiên dashboard, ẩn card phụ để không vỡ */
+@media (max-width: 767px) {
+  .hero-visual-wrap.hero-visual-updated {
+    display: block !important;
+    max-width: 100% !important;
+    margin-top: 28px !important;
+    padding: 0 !important;
+  }
+
+  .hero-visual-updated .hero-dashboard {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .hero-visual-updated .hero-popup,
+  .hero-visual-updated .hero-badge {
+    display: none !important;
+  }
+}
 </style>
 </head>
 <body>
