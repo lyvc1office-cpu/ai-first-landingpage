@@ -1948,6 +1948,30 @@ section{padding:80px 0}
     display: none !important;
   }
 }
+  /* ===== HERO LAYOUT FIX V3A - workflow only ===== */
+
+/* Tăng chiều cao vùng hero để workflow có chỗ nằm xuống dưới */
+.hero-visual-wrap.hero-visual-updated {
+  height: 760px !important;
+  overflow: visible !important;
+}
+
+/* Giữ dashboard ở vị trí chính, không bị workflow che quá nhiều */
+.hero-visual-updated .hero-dashboard {
+  width: 62% !important;
+  max-width: 720px !important;
+  transform: translateY(0) !important;
+  z-index: 3 !important;
+}
+
+/* Workflow: thu nhỏ mạnh và kéo xuống dưới dashboard */
+.hero-visual-updated .hero-popup-workflow {
+  width: 310px !important;
+  left: 52% !important;
+  bottom: 18px !important;
+  transform: translateX(-50%) !important;
+  z-index: 9 !important;
+}
 </style>
 </head>
 <body>
