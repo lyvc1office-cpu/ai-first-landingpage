@@ -2616,6 +2616,143 @@ section{padding:80px 0}
     display: none !important;
   }
 }
+  /* ===== HERO LAYOUT FIX V9 - shrink left cluster + enlarge AI card ===== */
+
+.hero-visual-wrap.hero-visual-updated {
+  display: grid !important;
+  grid-template-columns: 400px 760px !important;
+  grid-template-areas: "leftGroup dash" !important;
+  column-gap: 34px !important;
+  align-items: start !important;
+  justify-content: center !important;
+  max-width: 1194px !important;
+  margin: 34px auto 0 !important;
+  padding: 10px 0 22px !important;
+  overflow: visible !important;
+}
+
+/* Ẩn 3 icon module nếu vẫn còn */
+.hero-visual-updated .hb-1work,
+.hero-visual-updated .hb-1hrm,
+.hero-visual-updated .hb-1crm {
+  display: none !important;
+}
+
+/* 1Assistant: phóng to nhẹ để cân hơn với KPI */
+.hero-visual-updated .hero-popup-ai {
+  grid-area: leftGroup !important;
+  width: 212px !important;
+  max-width: 212px !important;
+  height: auto !important;
+  justify-self: start !important;
+  align-self: start !important;
+  object-fit: contain !important;
+  z-index: 5 !important;
+}
+
+/* KPI: giữ nhỏ hơn AI một chút để cụm trái đỡ nặng */
+.hero-visual-updated .hero-popup-kpi {
+  grid-area: leftGroup !important;
+  width: 188px !important;
+  max-width: 188px !important;
+  height: auto !important;
+  justify-self: end !important;
+  align-self: start !important;
+  object-fit: contain !important;
+  z-index: 5 !important;
+}
+
+/* Workflow: co toàn cụm lại và căn mép trái/phải thẳng với 2 card trên */
+.hero-visual-updated .hero-popup-workflow {
+  grid-area: leftGroup !important;
+  width: 400px !important;
+  max-width: 400px !important;
+  height: auto !important;
+  justify-self: start !important;
+  align-self: start !important;
+  margin-top: 248px !important;
+  object-fit: contain !important;
+  z-index: 4 !important;
+}
+
+/* Dashboard chính bên phải */
+.hero-visual-updated .hero-dashboard {
+  grid-area: dash !important;
+  width: 760px !important;
+  max-width: 760px !important;
+  height: 555px !important;
+  object-fit: cover !important;
+  object-position: top center !important;
+  justify-self: center !important;
+  align-self: start !important;
+  border-radius: 20px !important;
+  z-index: 3 !important;
+}
+
+#hero {
+  overflow: visible !important;
+  padding-bottom: 60px !important;
+}
+
+/* Tablet */
+@media (max-width: 1023px) {
+  .hero-visual-wrap.hero-visual-updated {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-template-areas:
+      "dash"
+      "leftGroup" !important;
+    row-gap: 24px !important;
+    max-width: 760px !important;
+  }
+
+  .hero-visual-updated .hero-dashboard {
+    width: 100% !important;
+    max-width: 720px !important;
+    height: auto !important;
+    object-fit: contain !important;
+  }
+
+  .hero-visual-updated .hero-popup-ai {
+    width: 210px !important;
+    max-width: 210px !important;
+    justify-self: start !important;
+  }
+
+  .hero-visual-updated .hero-popup-kpi {
+    width: 186px !important;
+    max-width: 186px !important;
+    justify-self: end !important;
+  }
+
+  .hero-visual-updated .hero-popup-workflow {
+    width: 400px !important;
+    max-width: 400px !important;
+    margin-top: 248px !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .hero-visual-wrap.hero-visual-updated {
+    display: block !important;
+    max-width: 100% !important;
+    margin-top: 28px !important;
+    padding: 0 !important;
+  }
+
+  .hero-visual-updated .hero-dashboard {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+  }
+
+  .hero-visual-updated .hero-popup,
+  .hero-visual-updated .hero-badge {
+    display: none !important;
+  }
+}
 </style>
 </head>
 <body>
