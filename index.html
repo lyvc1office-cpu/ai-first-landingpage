@@ -2477,6 +2477,145 @@ section{padding:80px 0}
     display: none !important;
   }
 }
+  /* ===== HERO LAYOUT FIX V7 - hard align left visual group ===== */
+
+/* Layout tổng: trái là cụm 2x2, phải là dashboard */
+.hero-visual-wrap.hero-visual-updated {
+  display: grid !important;
+  grid-template-columns: 540px 700px !important;
+  grid-template-rows: auto !important;
+  grid-template-areas: "leftGroup dash" !important;
+  column-gap: 44px !important;
+  align-items: start !important;
+  justify-content: center !important;
+  max-width: 1284px !important;
+  margin: 34px auto 0 !important;
+  padding: 16px 0 28px !important;
+  overflow: visible !important;
+}
+
+/* Tạo một "ảo giác" cụm trái bằng cách đặt 3 ảnh vào cùng hệ tọa độ */
+.hero-visual-updated .hero-popup-ai {
+  grid-area: leftGroup !important;
+  width: 255px !important;
+  max-width: 255px !important;
+  height: auto !important;
+  justify-self: start !important;
+  align-self: start !important;
+  object-fit: contain !important;
+  z-index: 5 !important;
+}
+
+.hero-visual-updated .hero-popup-kpi {
+  grid-area: leftGroup !important;
+  width: 255px !important;
+  max-width: 255px !important;
+  height: auto !important;
+  justify-self: end !important;
+  align-self: start !important;
+  object-fit: contain !important;
+  z-index: 5 !important;
+}
+
+/* Workflow nằm dưới, rộng đúng bằng cụm 2 card trên */
+.hero-visual-updated .hero-popup-workflow {
+  grid-area: leftGroup !important;
+  width: 540px !important;
+  max-width: 540px !important;
+  height: auto !important;
+  justify-self: start !important;
+  align-self: start !important;
+  margin-top: 330px !important;
+  object-fit: contain !important;
+  z-index: 4 !important;
+}
+
+/* Dashboard chính bên phải */
+.hero-visual-updated .hero-dashboard {
+  grid-area: dash !important;
+  width: 700px !important;
+  max-width: 700px !important;
+  height: 498px !important;
+  object-fit: cover !important;
+  object-position: top center !important;
+  justify-self: center !important;
+  align-self: start !important;
+  border-radius: 20px !important;
+  z-index: 3 !important;
+}
+
+/* Ẩn module chips */
+.hero-visual-updated .hb-1work,
+.hero-visual-updated .hb-1hrm,
+.hero-visual-updated .hb-1crm {
+  display: none !important;
+}
+
+/* Giảm khoảng dưới hero */
+#hero {
+  overflow: visible !important;
+  padding-bottom: 68px !important;
+}
+
+/* Tablet */
+@media (max-width: 1023px) {
+  .hero-visual-wrap.hero-visual-updated {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-template-areas:
+      "dash"
+      "leftGroup" !important;
+    max-width: 760px !important;
+    row-gap: 24px !important;
+  }
+
+  .hero-visual-updated .hero-dashboard {
+    width: 100% !important;
+    max-width: 720px !important;
+    height: auto !important;
+    object-fit: contain !important;
+  }
+
+  .hero-visual-updated .hero-popup-ai {
+    width: 48% !important;
+    max-width: 260px !important;
+    justify-self: start !important;
+  }
+
+  .hero-visual-updated .hero-popup-kpi {
+    width: 48% !important;
+    max-width: 260px !important;
+    justify-self: end !important;
+  }
+
+  .hero-visual-updated .hero-popup-workflow {
+    width: 100% !important;
+    max-width: 540px !important;
+    margin-top: 330px !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .hero-visual-wrap.hero-visual-updated {
+    display: block !important;
+    max-width: 100% !important;
+    margin-top: 28px !important;
+    padding: 0 !important;
+  }
+
+  .hero-visual-updated .hero-dashboard {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+  }
+
+  .hero-visual-updated .hero-popup,
+  .hero-visual-updated .hero-badge {
+    display: none !important;
+  }
+}
 </style>
 </head>
 <body>
