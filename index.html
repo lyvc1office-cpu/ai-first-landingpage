@@ -1972,6 +1972,69 @@ section{padding:80px 0}
   transform: translateX(-50%) !important;
   z-index: 9 !important;
 }
+  /* ===== HERO LAYOUT FIX V3B - final visual hierarchy ===== */
+
+/* Cho popup có không gian nổi, tránh bị cắt */
+#hero {
+  overflow: visible !important;
+  padding-bottom: 120px !important;
+}
+
+.hero-visual-wrap.hero-visual-updated {
+  height: 780px !important;
+  max-width: 1240px !important;
+  overflow: visible !important;
+  margin-top: 40px !important;
+}
+
+/* Dashboard phải là visual chính */
+.hero-visual-updated .hero-dashboard {
+  width: 66% !important;
+  max-width: 760px !important;
+  transform: translateY(-4px) !important;
+  z-index: 3 !important;
+}
+
+/* Assistant: thu nhỏ, kéo vào trong và hạ xuống để không bị lẹm */
+.hero-visual-updated .hero-popup-ai {
+  width: 198px !important;
+  left: 6.5% !important;
+  top: 168px !important;
+  z-index: 12 !important;
+}
+
+/* KPI: thu nhỏ nhẹ, neo góc phải trên */
+.hero-visual-updated .hero-popup-kpi {
+  width: 180px !important;
+  right: 16% !important;
+  top: 82px !important;
+  z-index: 10 !important;
+}
+
+/* Workflow: nhỏ hơn nữa và trượt xuống dưới, chỉ chồng nhẹ mép dưới dashboard */
+.hero-visual-updated .hero-popup-workflow {
+  width: 270px !important;
+  left: 52% !important;
+  bottom: -78px !important;
+  transform: translateX(-50%) !important;
+  z-index: 9 !important;
+}
+
+/* Module cards giữ vai trò phụ, lùi nhẹ ra phải */
+.hero-visual-updated .hb-1work {
+  right: 1.5% !important;
+  top: 225px !important;
+}
+
+.hero-visual-updated .hb-1hrm {
+  right: 4% !important;
+  top: 56% !important;
+}
+
+.hero-visual-updated .hb-1crm {
+  right: 1.5% !important;
+  bottom: 85px !important;
+}
 </style>
 </head>
 <body>
