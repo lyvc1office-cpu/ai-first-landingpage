@@ -1836,7 +1836,118 @@ section{padding:80px 0}
 .header-logo picture{display:inline-flex;align-items:center}
 .header-logo-img{height:30px;width:auto;display:block}
 @media(max-width:767px){.header-logo-img{height:24px}}
+/* ===== HERO LAYOUT FIX V2 - reduce popup overlap ===== */
 
+/* Cho phép popup nổi ra ngoài mà không bị cắt lẹm */
+#hero {
+  overflow: visible;
+  padding-bottom: 88px;
+}
+
+.hero-visual-wrap.hero-visual-updated {
+  height: 700px;
+  max-width: 1240px;
+  overflow: visible;
+}
+
+/* Giữ dashboard là visual chính */
+.hero-visual-updated .hero-dashboard {
+  width: 64%;
+  max-width: 720px;
+  transform: translateY(20px);
+  z-index: 3;
+}
+
+/* Popup 1Assistant: nhỏ hơn, kéo vào trong, không bị lẹm */
+.hero-visual-updated .hero-popup-ai {
+  width: 230px;
+  left: 5%;
+  top: 128px;
+  z-index: 12;
+}
+
+/* Popup KPI: nhỏ hơn, neo góc phải trên, không che dashboard quá nhiều */
+.hero-visual-updated .hero-popup-kpi {
+  width: 205px;
+  right: 13.5%;
+  top: 30px;
+  z-index: 10;
+}
+
+/* Popup Workflow: giảm size mạnh nhất, hạ xuống dưới dashboard */
+.hero-visual-updated .hero-popup-workflow {
+  width: 390px;
+  left: 50%;
+  bottom: -8px;
+  transform: translateX(-50%);
+  z-index: 11;
+}
+
+/* Cụm module bên phải: đẩy nhẹ ra ngoài, giữ vai trò phụ */
+.hero-visual-updated .hb-1work {
+  right: 1%;
+  top: 210px;
+}
+
+.hero-visual-updated .hb-1hrm {
+  right: 3%;
+  top: 55%;
+}
+
+.hero-visual-updated .hb-1crm {
+  right: 1%;
+  bottom: 70px;
+}
+
+/* Tablet */
+@media (max-width: 1023px) {
+  .hero-visual-wrap.hero-visual-updated {
+    height: 560px;
+    max-width: 900px;
+  }
+
+  .hero-visual-updated .hero-dashboard {
+    width: 72%;
+    transform: translateY(10px);
+  }
+
+  .hero-visual-updated .hero-popup-ai {
+    width: 190px;
+    left: 3%;
+    top: 120px;
+  }
+
+  .hero-visual-updated .hero-popup-kpi {
+    width: 180px;
+    right: 4%;
+    top: 70px;
+  }
+
+  .hero-visual-updated .hero-popup-workflow {
+    width: 320px;
+    bottom: 4px;
+  }
+}
+
+/* Mobile: ẩn popup để không vỡ layout */
+@media (max-width: 767px) {
+  .hero-visual-wrap.hero-visual-updated {
+    height: auto;
+    max-width: 100%;
+    padding: 20px 0 0;
+  }
+
+  .hero-visual-updated .hero-dashboard {
+    width: 100%;
+    max-width: 100%;
+    transform: none;
+  }
+
+  .hero-visual-updated .hero-popup,
+  .hero-visual-updated .hero-badge {
+    display: none !important;
+  }
+}
 </style>
 </head>
 <body>
